@@ -16,3 +16,7 @@ add_executable(stanley_demo Stanley/main.cpp  Stanley/Stanley.cpp PID/KinematicM
 target_link_libraries(stanley_demo PRIVATE chhRobotics_CPP)
 
 
+# 后轮位置反馈控制
+add_executable(rear_wheel_feedback_demo Rear_Wheel_Feedback/main.cpp  Rear_Wheel_Feedback/RearWheelFeedback.cpp Rear_Wheel_Feedback/MyReferencePath.cpp PID/KinematicModel.cpp)
+target_link_libraries(rear_wheel_feedback_demo PRIVATE chhRobotics_CPP)
+
