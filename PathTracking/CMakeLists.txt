@@ -11,3 +11,8 @@ target_link_libraries(pid_demo PRIVATE chhRobotics_CPP)
 add_executable(pure_pursuit_demo Pure_Pursuit/main.cpp  Pure_Pursuit/PurePursuit.cpp PID/KinematicModel.cpp)
 target_link_libraries(pure_pursuit_demo PRIVATE chhRobotics_CPP)
 
+#stanley
+add_executable(stanley_demo Stanley/main.cpp  Stanley/Stanley.cpp PID/KinematicModel.cpp)
+target_link_libraries(stanley_demo PRIVATE chhRobotics_CPP)
+
+
