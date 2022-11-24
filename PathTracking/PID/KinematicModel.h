@@ -17,9 +17,8 @@ public:
 
     KinematicModel(double x, double y, double psi, double v, double l, double dt);
 
-    vector<double>getState(){
-        return {x,y,psi,v};
-    }
+   vector<double>getState();
+
     void updateState(double accel, double delta_f);
 };
 

@@ -26,3 +26,12 @@ void KinematicModel::updateState(double accel, double delta_f) {
     v = v + accel*dt;
 }
 
+/**
+ * 状态获取
+ * @return
+ */
+vector<double> KinematicModel::getState() {
+    return {x,y,psi,v};
+}
+
+

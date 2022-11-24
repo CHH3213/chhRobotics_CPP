@@ -79,7 +79,7 @@ int main(){
     }
     // save figure
     const char* filename = "./pid_demo.png";
-    std::cout << "Saving result to " << filename << std::endl;;
+    cout << "Saving result to " << filename << std::endl;
     plt::save(filename);
     plt::show();
     return 0;

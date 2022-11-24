@@ -13,17 +13,30 @@ PID_controller::PID_controller(double kp, double ki, double kd, double target, d
                                                                                                              target(target),
                                                                                                              upper(upper),
                                                                                                              lower(lower) {}
-
+/**
+ * 设置目标
+ * @param target
+ */
 void PID_controller::setTarget(double target) {
     PID_controller::target = target;
 }
-
+/**
+ * 设置pid参数
+ * @param kp
+ * @param ki
+ * @param kd
+ */
 void PID_controller::setK(double kp, double ki, double kd) {
     this->kp=kp;
     this->ki=ki;
     this->kd=kd;
 }
 
+/**
+ * 设置控制量边界
+ * @param upper
+ * @param lower
+ */
 void PID_controller::setBound(double upper, double lower) {
     this->upper=upper;
     this->lower=lower;
@@ -44,10 +57,17 @@ double PID_controller::calOutput(double state) {
     return u;
 }
 
+/**
+ * 重置
+ */
 void PID_controller::reset() {
     error=0.0,pre_error=0.0,sum_error=0.0;
 }
 
+/**
+ * 设置累计误差
+ * @param sum_error
+ */
 void PID_controller::setSumError(double sum_error) {
     this->sum_error = sum_error;
 }

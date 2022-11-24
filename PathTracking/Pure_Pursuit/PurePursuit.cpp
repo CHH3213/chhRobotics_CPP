@@ -4,6 +4,13 @@
 
 #include "PurePursuit.h"
 
+/**
+ * 计算邻近路点
+ * @param robot_state 当前机器人位置
+ * @param refer_path 参考轨迹（数组）
+ * @param l_d 前向距离
+ * @return
+ */
 double PurePursuit::calTargetIndex(vector<double> robot_state, vector<vector<double>> refer_path, double l_d) {
     vector<double>dists;
     for (vector<double>xy:refer_path) {
@@ -21,6 +28,15 @@ double PurePursuit::calTargetIndex(vector<double> robot_state, vector<vector<dou
     return min_ind;
 }
 
+/**
+ * purePursuitControl
+ * @param robot_state 当前机器人位置
+ * @param current_ref_point 参考轨迹点
+ * @param l_d 前向距离
+ * @param psi 机器人航向角
+ * @param L 轴距
+ * @return 转角控制量
+ */
 double PurePursuit::purePursuitControl(vector<double> robot_state, vector<double> current_ref_point, double l_d, double psi, double L) {
     double alpha = atan2(current_ref_point[1]-robot_state[1],current_ref_point[0]-robot_state[0])-psi;
 
