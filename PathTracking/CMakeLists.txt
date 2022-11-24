@@ -3,6 +3,11 @@ project(chhRobotics_CPP)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(pid_demo PID/main.cpp PID/PID_controller.h PID/KinematicModel.h PID/PID_controller.cpp PID/KinematicModel.cpp)
+#PID
+add_executable(pid_demo PID/main.cpp PID/PID_controller.cpp PID/KinematicModel.cpp)
 target_link_libraries(pid_demo PRIVATE chhRobotics_CPP)
+
+#pure pursuit
+add_executable(pure_pursuit_demo Pure_Pursuit/main.cpp  Pure_Pursuit/PurePursuit.cpp PID/KinematicModel.cpp)
+target_link_libraries(pure_pursuit_demo PRIVATE chhRobotics_CPP)
 
