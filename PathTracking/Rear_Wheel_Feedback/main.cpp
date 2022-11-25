@@ -11,7 +11,7 @@ namespace plt = matplotlibcpp;
 
 int main(){
 
-    double Kpsi=1.0, K2=0.5;//利亚普诺夫系数
+    double Kpsi=3, K2=1.5;//利亚普诺夫系数
 
     double dt=0.1; // 时间间隔，单位：s
     double L=2; // 车辆轴距，单位：m
@@ -26,12 +26,10 @@ int main(){
     RearWheelFeedback rwf(Kpsi,K2,L);
     vector<double>robot_state;
 
-    //画参考轨迹
-    plt::plot(referencePath.refer_x,referencePath.refer_y,"b--");
-    plt::grid(true);
-    plt::ylim(-5,5);
+
 
     for(int i=0;i<500;i++){
+        plt::clf();
         robot_state = ugv.getState();
         vector<double>one_trial = referencePath.calcTrackError(robot_state);
         double e = one_trial[0],k = one_trial[1],ref_psi = one_trial[2];
@@ -41,6 +39,10 @@ int main(){
 
         x_.push_back(ugv.x);
         y_.push_back(ugv.y);
+        //画参考轨迹
+        plt::plot(referencePath.refer_x,referencePath.refer_y,"b--");
+        plt::grid(true);
+        plt::ylim(-5,5);
         //画图
         plt::plot(x_, y_,"r");
         plt::pause(0.01);
