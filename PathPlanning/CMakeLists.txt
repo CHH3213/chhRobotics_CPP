@@ -15,3 +15,7 @@ target_link_libraries(bezier_demo PRIVATE chhRobotics_CPP)
 # B-spline
 add_executable(b_spline_demo B-spline/main.cpp B-spline/BSpline.cpp)
 target_link_libraries(b_spline_demo PRIVATE chhRobotics_CPP)
+
+# 曲线插值
+add_executable(curve_demo Curve_interpolation/main.cpp )
+target_link_libraries(curve_demo PRIVATE chhRobotics_CPP)

@@ -16,14 +16,16 @@ int main()
     //b<<1,1,
     //1,1;
     //Eigen::MatrixXd a(1,2);
-    //a<<1,1;
-    //vector<Eigen::MatrixXd>vec;
-    //vec.push_back(a);
-    //vec.push_back(b);
-    //std::cout << vec[1] << std::endl;     // eigen重载了<<运算符，可以直接输出eigen矩阵的值
-    Vector2d vec2(1,1);
-    Vector2d  vec1(2,3);
-    Vector2d s = vec2+vec1;
-    //cout<<3*s[0]<<endl;
-    cout<<pow(0.9,2);
+    VectorXd v(6);
+    v<<1,2,3,4,5,6;
+    MatrixXd m(2,6);
+    m<<1,2,3,4,5,6,7,8,9,10,11,12;
+    cout<<m(1)<<endl;
+    MatrixXd xc(6,1);
+    xc<<1,2,3,4,5,6;
+    xc<<1,5,4653,4,5,6;
+    MatrixXd res = m*xc;
+    cout<<res(0,0)<<endl;
+
+    //cout<<v<<endl;
 }
