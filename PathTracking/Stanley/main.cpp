@@ -4,7 +4,7 @@
 
 #include "Stanley.h"
 #include "../../matplotlibcpp.h"
-#include "../PID/KinematicModel.h"
+#include "../utils/KinematicModel.h"
 namespace plt = matplotlibcpp;
 
 #define PI 3.1415926

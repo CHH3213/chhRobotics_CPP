@@ -7,7 +7,10 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include<Eigen/Dense>
+
 using namespace std;
+using namespace Eigen;
 
 class KinematicModel {
 public:
@@ -20,6 +23,9 @@ public:
    vector<double>getState();
 
     void updateState(double accel, double delta_f);
+
+    vector<MatrixXd> stateSpace(double ref_delta, double ref_yaw);
+
 };
 
 
