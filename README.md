@@ -14,23 +14,40 @@ python代码实现参考[github仓库](https://github.com/CHH3213/chhRobotics) .
 ### 项目依赖
 本项目在Ubuntu 20.04下运行，windows下尚未尝试过，因此推荐使用Ubuntu系统。
 
-
+```markdown
 - python3
 - matplotlib
 - cmake
-
-cmake的安装直接终端运行
-```shell
-sudo apt install cmake
+- Eigen
 ```
 
-如果在项目编译时报cmake版本低的错误，可参考该 [博客](https://www.cnblogs.com/wzc0066/p/16504557.html) 升级cmake。
 
-对cmake操作不不够熟悉的同学可以先参考[文档](https://github.com/CHH3213/Books/blob/master/%E7%BC%96%E7%A8%8B/%E5%B7%A5%E5%85%B7/CMake%20Practice.pdf) 学习。
+- cmake的安装直接终端运行
+    ```shell
+    sudo apt install cmake
+    ```
+    
+    如果在项目编译时报cmake版本低的错误，可参考该 [博客](https://www.cnblogs.com/wzc0066/p/16504557.html) 升级cmake。
+    
+    对cmake操作不不够熟悉的同学可以先参考[文档](https://github.com/CHH3213/Books/blob/master/%E7%BC%96%E7%A8%8B/%E5%B7%A5%E5%85%B7/CMake%20Practice.pdf) 学习。
+
+- Eigen在Linux下的安装直接使用命令
+
+    ```shell
+    sudo apt-get install libeigen3-dev
+    ```
+    
+    Eigen库采用模板编程技术，仅由一些头文件组成，运行速度快。用cmake管理项目的时候，只需要在CMakeLists.txt里面添加头文件的路径即可：
+    ```cmake
+    find_package(Eigen3 REQUIRED)
+    include_directories(${EIGEN3_INCLUDE_DIR})
+    ```
+    
+    Eigen库的学习除了[官网](https://eigen.tuxfamily.org/index.php?title=Main_Page#Documentation) 之外，还可以参考[这篇博客](https://blog.csdn.net/hongge_smile/article/details/107296658#t1) 。
 
 
-画图代码采用了c++ 调用python的matplotlib的方式，具体使用方式参考[说明文档](https://matplotlib-cpp.readthedocs.io/en/latest/compiling.html#compiling) 。
-这边已经实现了该功能，主要使用`pip`的方式安装matplotlib即可。
+- 画图代码采用了c++ 调用python的matplotlib的方式，具体使用方式参考[说明文档](https://matplotlib-cpp.readthedocs.io/en/latest/compiling.html#compiling) 。
+这边直接移植了该功能，主要使用`pip`的方式安装matplotlib即可。
 
 ### 项目编译
 
