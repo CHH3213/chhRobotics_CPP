@@ -65,5 +65,4 @@ int main(){
     plt::save(filename);
     plt::show();
     return 0;
-    return 0;
 }
