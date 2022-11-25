@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
+find_package(OsqpEigen REQUIRED)
 
 #PID
 add_executable(pid_demo PID/main.cpp PID/PID_controller.cpp utils/KinematicModel.cpp)
@@ -28,3 +29,7 @@ target_link_libraries(rear_wheel_feedback_demo PRIVATE chhRobotics_CPP)
 # lqr控制
 add_executable(lqr_demo LQR/main.cpp  LQR/LQRControl.cpp utils/MyReferencePath.cpp utils/KinematicModel.cpp)
 target_link_libraries(lqr_demo PRIVATE chhRobotics_CPP)
+
+# mpc控制 待实现
+#add_executable(mpc_demo MPC/main.cpp  MPC/MPCControl.cpp utils/MyReferencePath.cpp utils/KinematicModel.cpp)
+#target_link_libraries(mpc_demo PRIVATE chhRobotics_CPP OsqpEigen::OsqpEigen)
