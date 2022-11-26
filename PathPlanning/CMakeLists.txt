@@ -19,3 +19,8 @@ target_link_libraries(b_spline_demo PRIVATE chhRobotics_CPP)
 # 曲线插值
 add_executable(curve_demo Curve_interpolation/main.cpp )
 target_link_libraries(curve_demo PRIVATE chhRobotics_CPP)
+
+
+# 人势场法
+add_executable(apf_demo Artifical_Potential_Field/main.cpp Artifical_Potential_Field/APF.cpp)
+target_link_libraries(apf_demo PRIVATE chhRobotics_CPP)
