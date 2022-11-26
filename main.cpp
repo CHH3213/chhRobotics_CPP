@@ -17,12 +17,26 @@ int main()
     //b<<1,1,
     //1,1;
     //Eigen::MatrixXd a(1,2);
-    VectorXd v(3);
-    v<<1,2,3;
-    double y = 1;
-    double x = v(1)-y;
-    cout<<x<<endl;
-    plt::plot(v(0),v(1),"blue");
+    vector<Vector2d>obstacle;//障碍物位置
+    obstacle.push_back(Vector2d(-1, -1));
+    obstacle.push_back(Vector2d(0, 2));
+    obstacle.push_back(Vector2d(4, 2));
+    obstacle.push_back(Vector2d(5, 4));
+    obstacle.push_back(Vector2d(5,5));
+    obstacle.push_back(Vector2d(5,6));
+    obstacle.push_back(Vector2d(5,9));
+    obstacle.push_back(Vector2d(8,9));
+    obstacle.push_back(Vector2d(7,9));
+    obstacle.push_back(Vector2d(8,10));
+    obstacle.push_back(Vector2d(9,11));
+    obstacle.push_back(Vector2d(12,13));
+    obstacle.push_back(Vector2d(12,12));
+    obstacle.push_back(Vector2d(15,15));
+    obstacle.push_back(Vector2d(13,13));
+    for(Vector2d obs:obstacle){//障碍物
+        //cout<<vector<double>(obs(0))<<endl;
+        plt::plot(vector<double>{obs(0)},vector<double>{obs(1)},"ok");
+    }
     plt::show();
-    //cout<<v<<endl;
+
 }

@@ -21,6 +21,10 @@ add_executable(curve_demo Curve_interpolation/main.cpp )
 target_link_libraries(curve_demo PRIVATE chhRobotics_CPP)
 
 
-# 人势场法
+# 人工势场法
 add_executable(apf_demo Artifical_Potential_Field/main.cpp Artifical_Potential_Field/APF.cpp)
 target_link_libraries(apf_demo PRIVATE chhRobotics_CPP)
+
+# 动态窗口法
+add_executable(dwa_demo Dynamic_Window_Approach/main.cpp Dynamic_Window_Approach/DWA.cpp)
+target_link_libraries(dwa_demo PRIVATE chhRobotics_CPP)
