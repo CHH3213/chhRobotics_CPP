@@ -4,9 +4,9 @@
 
 #include "LQRControl.h"
 #include "../utils/MyReferencePath.h"
-#include "../../matplotlibcpp.h"
 #include "../utils/KinematicModel.h"
 #include "../utils/NormalizeAngle.h"
+#include "../../matplotlibcpp.h"
 namespace plt = matplotlibcpp;
 
 int main(){

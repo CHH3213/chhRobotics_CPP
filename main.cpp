@@ -2,9 +2,10 @@
 #include <Eigen/Dense>    // Eigen头文件，<Eigen/Dense>包含Eigen库里面所有的函数和类
 #include<vector>
 #include<cmath>
+#include "matplotlibcpp.h"
+namespace plt = matplotlibcpp;
 using namespace std;
 using namespace Eigen;
-
 int main()
 {
     //Eigen::MatrixXd m(2,2);   // MatrixXd 表示的是动态数组，初始化的时候指定数组的行数和列数
@@ -16,16 +17,12 @@ int main()
     //b<<1,1,
     //1,1;
     //Eigen::MatrixXd a(1,2);
-    VectorXd v(6);
-    v<<1,2,3,4,5,6;
-    MatrixXd m(2,6);
-    m<<1,2,3,4,5,6,7,8,9,10,11,12;
-    cout<<m(1)<<endl;
-    MatrixXd xc(6,1);
-    xc<<1,2,3,4,5,6;
-    xc<<1,5,4653,4,5,6;
-    MatrixXd res = m*xc;
-    cout<<res(0,0)<<endl;
-
+    VectorXd v(3);
+    v<<1,2,3;
+    double y = 1;
+    double x = v(1)-y;
+    cout<<x<<endl;
+    plt::plot(v(0),v(1),"blue");
+    plt::show();
     //cout<<v<<endl;
 }
