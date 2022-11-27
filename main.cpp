@@ -6,6 +6,8 @@
 namespace plt = matplotlibcpp;
 using namespace std;
 using namespace Eigen;
+#define PI 3.14159265354
+
 int main()
 {
     //Eigen::MatrixXd m(2,2);   // MatrixXd 表示的是动态数组，初始化的时候指定数组的行数和列数
@@ -17,26 +19,14 @@ int main()
     //b<<1,1,
     //1,1;
     //Eigen::MatrixXd a(1,2);
-    vector<Vector2d>obstacle;//障碍物位置
-    obstacle.push_back(Vector2d(-1, -1));
-    obstacle.push_back(Vector2d(0, 2));
-    obstacle.push_back(Vector2d(4, 2));
-    obstacle.push_back(Vector2d(5, 4));
-    obstacle.push_back(Vector2d(5,5));
-    obstacle.push_back(Vector2d(5,6));
-    obstacle.push_back(Vector2d(5,9));
-    obstacle.push_back(Vector2d(8,9));
-    obstacle.push_back(Vector2d(7,9));
-    obstacle.push_back(Vector2d(8,10));
-    obstacle.push_back(Vector2d(9,11));
-    obstacle.push_back(Vector2d(12,13));
-    obstacle.push_back(Vector2d(12,12));
-    obstacle.push_back(Vector2d(15,15));
-    obstacle.push_back(Vector2d(13,13));
-    for(Vector2d obs:obstacle){//障碍物
-        //cout<<vector<double>(obs(0))<<endl;
-        plt::plot(vector<double>{obs(0)},vector<double>{obs(1)},"ok");
+    vector<double>x_t,y_t;
+    double size = 0.5;
+    for(int i=0;i<=360;i+=5){
+        x_t.push_back(0+size*cos((double)i/180*PI));
+        y_t.push_back(0+size*sin((double)i/180*PI));
+
     }
+    plt::plot(x_t,y_t,"r");
     plt::show();
 
 }

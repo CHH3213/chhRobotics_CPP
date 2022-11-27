@@ -28,3 +28,7 @@ target_link_libraries(apf_demo PRIVATE chhRobotics_CPP)
 # 动态窗口法
 add_executable(dwa_demo Dynamic_Window_Approach/main.cpp Dynamic_Window_Approach/DWA.cpp)
 target_link_libraries(dwa_demo PRIVATE chhRobotics_CPP)
+
+# RRT
+add_executable(rrt_demo Rapidly-exploring_Random_Tree/main.cpp Rapidly-exploring_Random_Tree/RRT.cpp)
+target_link_libraries(rrt_demo PRIVATE chhRobotics_CPP)
