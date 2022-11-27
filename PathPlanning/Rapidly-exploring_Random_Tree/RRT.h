@@ -28,6 +28,7 @@ public:
         vector<double>path_x={},path_y={};//# 路径，作为画图的数据
         Node(double x, double y);
         Node*parent;
+        double cost;
 
     };
 private:

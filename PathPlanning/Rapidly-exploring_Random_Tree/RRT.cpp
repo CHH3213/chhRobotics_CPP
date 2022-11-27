@@ -4,7 +4,7 @@
 
 #include "RRT.h"
 
-RRT::Node::Node(double x, double y) : x(x), y(y),parent(NULL) {}
+RRT::Node::Node(double x, double y) : x(x), y(y),parent(NULL),cost(0) {}
 
 
 RRT::RRT( const vector<vector<double>> &obstacleList,
