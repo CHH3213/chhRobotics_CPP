@@ -31,7 +31,7 @@ public:
         double cost;
 
     };
-private:
+public:
 
 
     vector<vector<double>>obstacle_list;//障碍物位置列表 [[x,y,size],...]
