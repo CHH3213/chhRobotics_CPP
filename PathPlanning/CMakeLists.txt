@@ -32,3 +32,7 @@ target_link_libraries(dwa_demo PRIVATE chhRobotics_CPP)
 # RRT
 add_executable(rrt_demo Rapidly-exploring_Random_Tree/main.cpp Rapidly-exploring_Random_Tree/RRT.cpp)
 target_link_libraries(rrt_demo PRIVATE chhRobotics_CPP)
+
+# RRT_connect
+add_executable(rrt_connect_demo Rapidly-exploring_Random_Tree_connect/main.cpp Rapidly-exploring_Random_Tree_connect/RRT_connect.cpp)
+target_link_libraries(rrt_connect_demo PRIVATE chhRobotics_CPP)
