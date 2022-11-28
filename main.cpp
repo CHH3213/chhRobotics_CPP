@@ -7,7 +7,7 @@ namespace plt = matplotlibcpp;
 using namespace std;
 using namespace Eigen;
 #define PI 3.14159265354
-
+#include "PathPlanning/Rapidly-exploring_Random_Tree/RRT.h"
 int main()
 {
     //Eigen::MatrixXd m(2,2);   // MatrixXd 表示的是动态数组，初始化的时候指定数组的行数和列数
@@ -26,6 +26,8 @@ int main()
         y_t.push_back(0+size*sin((double)i/180*PI));
 
     }
+    RRT::Node*begin = new RRT::Node(0.0,0.0);
+    RRT::Node*end = new RRT::Node(6.0,10.0);
     plt::plot(x_t,y_t,"r");
     plt::show();
 
