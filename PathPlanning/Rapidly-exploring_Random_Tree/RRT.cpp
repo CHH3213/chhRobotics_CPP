@@ -197,6 +197,7 @@ pair<vector<double>, vector<double>> RRT::planning() {
         if(calDistToGoal(node_list[node_list.size()-1]->x,node_list[node_list.size()-1]->y)<=expand_dis){
             Node* final_node = steer(node_list[node_list.size()-1],end,expand_dis);
             if(obstacleFree(final_node)){
+                cout<<"reaches the goal!"<<endl;
                 //return {node_list[node_list.size()-1]->path_x,node_list[node_list.size()-1]->path_y};
                 return generateFinalCourse(node_list.size()-1);
             }

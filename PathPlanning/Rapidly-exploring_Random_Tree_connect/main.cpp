@@ -34,7 +34,11 @@ int main(){
 
 
     plt::plot(traj.first,traj.second,"r");
+    const char* filename = "./rrt_connect_demo.png";
+    cout << "Saving result to " << filename << std::endl;
+    plt::save(filename);
     plt::show();
+
 
     return 0;
 }

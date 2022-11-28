@@ -237,6 +237,7 @@ pair<vector<double>, vector<double>> RRTConnect::planning() {
                     //当$𝑞′_{𝑛𝑒𝑤}=𝑞_{𝑛𝑒𝑤}$时，表示与第一棵树相连，算法结束
                     //if(new_node_2==new_node){//这种方式判断有问题。。
                     if(abs(new_node_2->x-new_node->x)<0.00001&&abs(new_node_2->y-new_node->y)<0.00001){
+                        cout<<"reaches the goal!"<<endl;
                         return generateFinalCourse();
                     }
                 }
