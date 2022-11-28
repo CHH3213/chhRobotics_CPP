@@ -44,3 +44,7 @@ target_link_libraries(rrt_star_demo PRIVATE chhRobotics_CPP)
 # Dijkstra
 add_executable(dijkstra_demo Dijkstra/main.cpp Dijkstra/Dijkstra.cpp)
 target_link_libraries(dijkstra_demo PRIVATE chhRobotics_CPP)
+
+# astar
+add_executable(astar_demo A-Star/Astar.cpp A-Star/main.cpp)
+target_link_libraries(astar_demo PRIVATE chhRobotics_CPP)
