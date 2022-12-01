@@ -31,7 +31,9 @@ struct Path{
     //     const vector<double> &y, const vector<double> &yaw, vector<double> directions);
 
 };
-
+/**
+ * 根据[pythonRobotics代码](https://atsushisakai.github.io/PythonRobotics/modules/path_planning/reeds_shepp_path/reeds_shepp_path.html)写成c++代码
+ */
 class ReedsShepp {
 private:
 
