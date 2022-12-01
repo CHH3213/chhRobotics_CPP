@@ -46,14 +46,14 @@ python代码实现参考[github仓库](https://github.com/CHH3213/chhRobotics) .
     Eigen库的学习除了[官网](https://eigen.tuxfamily.org/index.php?title=Main_Page#Documentation) 之外，还可以参考[这篇博客](https://blog.csdn.net/hongge_smile/article/details/107296658#t1) 。
 
 
-- 画图代码采用了c++ 调用python的matplotlib的方式，具体使用方式参考[说明文档](https://matplotlib-cpp.readthedocs.io/en/latest/compiling.html#compiling) 。
-这边直接移植了该功能，主要使用`pip`的方式安装matplotlib即可。
+- 画图代码采用了c++ 调用python的matplotlib的方式，所以需要使用`pip`的方式安装matplotlib，具体使用方式参考[说明文档](https://matplotlib-cpp.readthedocs.io/en/latest/compiling.html#compiling) 。
+这边直接移植了该功能。
 
 ### 项目编译
 
 本项目使用Cmake编译，所使用IDE为Clion（推荐使用）。
 
-若不使用Clion，则编译方式如下：
+若不使用Clion，则在项目主目录下，编译：
 
 ```shell
 mkdir build
