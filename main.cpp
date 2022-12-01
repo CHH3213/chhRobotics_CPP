@@ -19,16 +19,17 @@ int main()
     //b<<1,1,
     //1,1;
     //Eigen::MatrixXd a(1,2);
-    vector<double>x_t,y_t;
-    double size = 0.5;
-    for(int i=0;i<=360;i+=5){
-        x_t.push_back(0+size*cos((double)i/180*PI));
-        y_t.push_back(0+size*sin((double)i/180*PI));
-
-    }
-    RRT::Node*begin = new RRT::Node(0.0,0.0);
-    RRT::Node*end = new RRT::Node(6.0,10.0);
-    plt::plot(x_t,y_t,"r");
-    plt::show();
+    //vector<double>x_t,y_t;
+    //double size = 0.5;
+    //for(int i=0;i<=360;i+=5){
+    //    x_t.push_back(0+size*cos((double)i/180*PI));
+    //    y_t.push_back(0+size*sin((double)i/180*PI));
+    //
+    //}
+    //RRT::Node*begin = new RRT::Node(0.0,0.0);
+    //RRT::Node*end = new RRT::Node(6.0,10.0);
+    //plt::plot(x_t,y_t,"r");
+    //plt::show();
+    cout<<floor(3*PI/2.0/PI)<<endl;
 
 }

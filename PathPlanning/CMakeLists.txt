@@ -48,3 +48,7 @@ target_link_libraries(dijkstra_demo PRIVATE chhRobotics_CPP)
 # astar
 add_executable(astar_demo A_Star/Astar.cpp A_Star/main.cpp)
 target_link_libraries(astar_demo PRIVATE chhRobotics_CPP)
+
+# RS
+add_executable(rs_demo Reeds_Shepp_Path/main.cpp Reeds_Shepp_Path/ReedsShepp.cpp)
+target_link_libraries(rs_demo PRIVATE chhRobotics_CPP)
