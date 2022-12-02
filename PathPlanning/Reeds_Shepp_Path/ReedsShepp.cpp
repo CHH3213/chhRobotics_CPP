@@ -91,6 +91,7 @@ vector<Path> ReedsShepp::straightCurveStraight(double x, double y, double phi, v
         paths = setPath(paths,res.second,"SLS",step_size);
     }
     res = straightLeftStraight(x,-y,-phi);
+    flag = res.first;
     if(flag){
         paths = setPath(paths,res.second,"SRS",step_size);
     }
@@ -284,7 +285,7 @@ pair<bool, vector<double>> ReedsShepp::leftStraightRight(double x, double y, dou
     vector<double>res = polar(x+sin(phi),y-1.0-cos(phi));
     double t1 = res[1];
     double u1 = res[0];
-    u1 = u1*u1;
+    u1 *=u1;
     if(u1>=4.0){
         double u = sqrt(u1-4.0);
         double theta = atan2(2.0,u);
@@ -307,7 +308,7 @@ vector<Path> ReedsShepp::generatePath(vector<double> q0, vector<double> q1, doub
     double y = (-s*dx+c*dy)*max_curvature;
 
     vector<Path>paths;
-    paths= straightCurveStraight(x,y,dth,{},step_size);
+    paths= straightCurveStraight(x,y,dth,paths,step_size);
     paths= curveStraightCurve(x,y,dth,paths,step_size);
     paths= curveCurveCurve(x,y,dth,paths,step_size);
     return paths;
@@ -428,11 +429,11 @@ Path ReedsShepp::reedsSheppPathPlanning(vector<double> start, vector<double> goa
         cout<<"could not generate any path"<<endl;
     }
     double best_path_index=-1;
-    double min_L=100000000000000;
+    double min_L=numeric_limits<double>::max();
     for(int i=0;i<paths.size();i++){
         Path p = paths[i];
         if(min_L>abs(p.L)){
-            min_L=p.L;
+            min_L=abs(p.L);
             best_path_index = i;
         }
     }

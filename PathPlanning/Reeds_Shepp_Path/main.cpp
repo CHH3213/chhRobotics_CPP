@@ -2,8 +2,8 @@
 
 
 int main(){
-    vector<double>start{1.0,-4.0,(double)20/180*2*PI};
-    vector<double>goal{5.0,5.0,(double)100/180*2*PI};
+    vector<double>start{1.0,-4.0,(double)20/180*PI};
+    vector<double>goal{5.0,5.0,(double)100/180*PI};
     double curvature = 0.1;
     double step_size = 0.05;
     ReedsShepp reedsShepp;
