@@ -14,9 +14,10 @@ int main()
     //Vector3d b(1,2,3);
     //a[0]-=b[0];
     //cout<<a<<endl;
-    vector<double>x{1,2,3};
-    cout<<x[x.size()-1]<<endl;
-    cout<<x[-1]<<endl;
+    //MatrixXd xref(3,2);
+    //xref(0)=1;
+    //cout<<xref<<endl;
+    round(5.314);
     return 0;
 
 }

@@ -10,6 +10,8 @@
 #include<Eigen/Dense>
 #include "../utils/KinematicModel.h"
 #include "OsqpEigen/OsqpEigen.h"
+#include "../../matplotlibcpp.h"
+namespace plt = matplotlibcpp;
 using namespace std;
 using namespace Eigen;
 using namespace OsqpEigen;
@@ -20,7 +22,10 @@ private:
 public:
     MPCControl(int nx, int nu, int t);
 
-    double linearMPCControl(vector<double>xref,double x0, vector<double> ref_delta, KinematicModel ugv);
+    vector<double> linearMPCControl(MatrixXd xref, double x0, MatrixXd ref_delta, KinematicModel ugv);
+
+
+
 };
 
 

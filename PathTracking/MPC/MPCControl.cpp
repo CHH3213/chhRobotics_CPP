@@ -6,8 +6,10 @@
 
 MPCControl::MPCControl(int nx, int nu, int t) : NX(nx), NU(nu), T(t) {}
 
-double MPCControl::linearMPCControl(vector<double> xref, double x0, vector<double> ref_delta, KinematicModel ugv) {
+vector<double> MPCControl::linearMPCControl(MatrixXd xref,double x0, MatrixXd ref_delta, KinematicModel ugv) {
 
+    Solver solver;
+    solver.data()->setNumberOfVariables(NX);
 
 
 }

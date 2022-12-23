@@ -2,8 +2,8 @@
 // Created by chh3213 on 2022/11/25.
 //
 
-#ifndef CHHROBOTICS_CPP_NORMALIZEANGLE_H
-#define CHHROBOTICS_CPP_NORMALIZEANGLE_H
+#ifndef CHHROBOTICS_CPP_NORMALIZEANGLE_HPP
+#define CHHROBOTICS_CPP_NORMALIZEANGLE_HPP
 
 #define PI 3.1415926
 
@@ -21,4 +21,4 @@ double normalizeAngle(double angle) {
     }
     return angle;
 }
-#endif //CHHROBOTICS_CPP_NORMALIZEANGLE_H
+#endif //CHHROBOTICS_CPP_NORMALIZEANGLE_HPP
