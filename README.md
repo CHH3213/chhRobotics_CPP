@@ -49,6 +49,10 @@ python代码实现参考[github仓库](https://github.com/CHH3213/chhRobotics) .
 - 画图代码采用了c++ 调用python的matplotlib的方式，所以需要使用`pip`的方式安装matplotlib，具体使用方式参考[说明文档](https://matplotlib-cpp.readthedocs.io/en/latest/compiling.html#compiling) 。
 这边直接移植了该功能。
 
+
+- 另外，MPC代码使用了CPPAD/Ipopt优化库，如果要进行MPC的测试，需要安装CPPAD/ipopt。安装方式可参考[博客](https://blog.csdn.net/weixin_42301220/article/details/127946528) 。
+
+
 ### 项目编译
 
 本项目使用Cmake编译，所使用IDE为Clion（推荐使用）。
