@@ -7,8 +7,8 @@
 namespace plt = matplotlibcpp;
 
 int main(){
-    vector<Vector2d>Ps{Vector2d (0,0),Vector2d(1,1),Vector2d(2,1),Vector2d(3,0),Vector2d(4,2)};
-    //vector<Vector2d>Ps{Vector2d (9.036145, 51.779661),Vector2d(21.084337, 70.084746),Vector2d(37.607573, 50.254237),Vector2d(51.893287, 69.745763),Vector2d(61.187608,  49.576271)};
+//    vector<Vector2d>Ps{Vector2d (0,0),Vector2d(1,1),Vector2d(2,1),Vector2d(3,0),Vector2d(4,2)};
+    vector<Vector2d>Ps{Vector2d (9.036145, 51.779661),Vector2d(21.084337, 70.084746),Vector2d(37.607573, 50.254237),Vector2d(51.893287, 69.745763),Vector2d(61.187608,  49.576271)};
 
     vector<double>x_ref,y_ref;
     for(int i=0;i<Ps.size();i++){

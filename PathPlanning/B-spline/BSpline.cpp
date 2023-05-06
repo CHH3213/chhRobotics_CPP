@@ -71,10 +71,13 @@ vector<double> u_piecewise_B_Spline(int n, int k) {
     vector<double> node_vector(n+k+1);
     if(n%(k-1)==0&&(k-1)>0){//满足n是k-1的整数倍且k-1为正整数
         for(int i=n+1;i<n+k+1;i++)node_vector[i]=1;//末尾n+1到n+k+1的数重复
-        double piecewise = n / (k-1);  //设定内节点的值
+        int piecewise = n / (k-1);  //设定内节点的值
         if(piecewise>1){
             //内节点重复k-1次
-            for(int i=k;i<n+1;i++)node_vector[i]=1/piecewise;
+            for(int i=1;i<piecewise;i++){
+                for(int j=0;j<k-1;j++)node_vector[(k-1)*i+j+1]=i/piecewise;
+            }
+            
         }
     }else{
         cout<<"error!需要满足n是k-1的整数倍且k-1为正整数"<<endl;
