@@ -17,7 +17,7 @@ class LateralErrorModel {
 
         std::vector<Eigen::MatrixXd> GenerateStateSpace();
         Eigen::VectorXd compute_state_derivative(const Eigen::VectorXd& state, double delta, double psi_des, double phi);
-
+        std::pair<Eigen::MatrixXd, Eigen::MatrixXd> DiscreteStateSpace(double dt);
     private:
         double m, Vx, C_alpha_f, C_alpha_r, l_f, l_r, I_z, g;
 };

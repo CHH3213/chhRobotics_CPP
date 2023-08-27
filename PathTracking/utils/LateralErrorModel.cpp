@@ -35,3 +35,15 @@ Eigen::VectorXd LateralErrorModel::compute_state_derivative(const Eigen::VectorX
     Eigen::VectorXd state_dot = A * state + B * delta + C * psi_des + D * std::sin(phi);
     return state_dot;
 }
+
+std::pair<Eigen::MatrixXd, Eigen::MatrixXd> LateralErrorModel::DiscreteStateSpace(double dt) {
+    auto ABCD = GenerateStateSpace();
+    const Eigen::MatrixXd& A = ABCD[0];
+    const Eigen::MatrixXd& B = ABCD[1];
+
+    Eigen::MatrixXd I = Eigen::MatrixXd::Identity(4, 4);
+    Eigen::MatrixXd A_bar = I + A * dt;
+    Eigen::MatrixXd B_bar = B * dt;
+
+    return std::make_pair(A_bar, B_bar);
+}
