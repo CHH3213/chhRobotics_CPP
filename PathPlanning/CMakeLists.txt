@@ -30,11 +30,11 @@ add_executable(dwa_demo Dynamic_Window_Approach/main.cpp Dynamic_Window_Approach
 target_link_libraries(dwa_demo PRIVATE chhRobotics_CPP)
 
 # RRT
-add_executable(rrt_demo Rapidly-exploring_Random_Tree/main.cpp Rapidly-exploring_Random_Tree/RRT.cpp)
+add_executable(rrt_demo Rapidly-exploring_Random_Tree/main.cpp Rapidly-exploring_Random_Tree/RRT.cpp utils/geometry_utils.h)
 target_link_libraries(rrt_demo PRIVATE chhRobotics_CPP)
 
 # RRT_connect
-add_executable(rrt_connect_demo Rapidly-exploring_Random_Tree_connect/main.cpp Rapidly-exploring_Random_Tree_connect/RRT_connect.cpp)
+add_executable(rrt_connect_demo Rapidly-exploring_Random_Tree_connect/main.cpp Rapidly-exploring_Random_Tree_connect/RRT_connect.cpp utils/geometry_utils.h)
 target_link_libraries(rrt_connect_demo PRIVATE chhRobotics_CPP)
 
 # RRT_star
